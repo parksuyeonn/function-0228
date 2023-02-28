@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    
+    const itsMe = { 
+      name :  "kongukjae",
+      age : 20,
+      home : "oracle",
+      hosil : "305ho",
+      sentence : "저는" + this.name + "입니다.", 
+      test : `저는 ${this.name}입니다.`,
+
+      adult : function(){
+        if(itsMe.age >= 20){
+          console.log("나는 성인이야")
+        } else{
+          console.log("나는 아직 성인이 아니야");
+        }
+      }
+    }; 
+    
+    itsMe.adult();
+
+    itsMe.myName = function(){ //작성방법 두번째
+      console.log("저는" + this.name + "입니다.");
+    }
+    
+    //변수가 객체안에 들어가면 키
+    //변수가 함수안에 들어가면 파라미터
+    //객체안에 함수가 들어가면 메서드(방법)
+
+    console.dir(itsMe);
+    console.log(itsMe.name);
+    console.log(itsMe.age);
+    console.log(typeof(itsMe))
+
+  </script>
+</body>
+</html>
