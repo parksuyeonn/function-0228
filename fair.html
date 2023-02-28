@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const root = document.getElementById('root');
+
+    function makeElement(tagName, setAttriName,setAttriValue,parent){
+      const element = document.createElement(tagName);
+      element.setAttribute(setAttriName,setAttriValue);
+      parent.appendChild(element);
+    }
+
+    const trainingData = {
+      title : "Lorem Ipsum",
+      paragraph : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      color : ["#1E1E1E", "#FFFFFF"],
+      round : ""
+    }
+    
+    // round : function(tagName,setAttriName,element){
+    //   const element = document.createElement(tagName);
+    //   element.setAttribute(setAttriName);
+    //   parent.appendChild(element);
+    // }
+    
+    const a = document.createElement('div');
+    root.appendChild(a);
+    // a.textContent = '';
+    console.dir(root.children[0]);
+    console.log(trainingData.title);
+    root.children[0].textContent = trainingData.title;
+    
+
+    const b = document.createElement('div');
+    root.appendChild(b);
+
+    const c = document.createElement('div');
+    root.appendChild(c);
+    root.children[2].textContent = trainingData.paragraph;
+
+    const d = document.createElement('div');
+    root.appendChild(d);
+
+    root.style.position = "relative";
+    root.style.backgroundColor = "#ffffff";
+    root.style.width = "430px";
+    root.style.height = "932px";
+    // root.style.top = "-467px";
+    // root.style.left = "-215px";
+    
+    a.style.position = "absolute";
+    a.style.width = "147px";
+    a.style.height = "29px";
+    a.style.fontFamily = "Inter";
+    a.style.fontStyle = "normal";
+    a.style.fontWeight = "400";
+    a.style.fontSize = "24px";
+    a.style.lineHeight = "29px";
+    a.style.color = "#000000";
+    a.style.top = "301px";
+    a.style.left = "141px";
+
+    b.style.position = "absolute";
+    b.style.width = "199px";
+    b.style.height = "2px";
+    b.style.left = "115px";
+    b.style.top = "340px";
+    b.style.backgroundColor = "#000000";
+
+
+    c.style.position = "absolute";
+    c.style.width = "295px";
+    c.style.height = "186px";
+    c.style.top = "364px";
+    c.style.left = "64px";
+    c.style.fontFamily = "Inter";
+    c.style.fontStyle = "normal";
+    c.style.fontSize = "12px";
+    c.style.lineHeight = "15px";
+    c.style.textAlign = "justify";
+    c.style.color = "#000000";
+    
+    d.style.position = "absolute";
+    d.style.width = "82px";
+    d.style.height = "82px";
+    d.style.top = "673px";
+    d.style.left = "174px";
+    d.style.backgroundColor = "#5A5A5A";
+    d.style.borderRadius = "41px";
+
+
+
+  </script>
+  
+</body>
+</html>
