@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="first"></div>
+    <div id="second"></div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+
+    root.style.width = "500px";
+    root.style.height = "500px";
+    root.style.border = "1px solid black";
+
+    const first = document.getElementById('first');
+    first.style.width = "200px";
+    first.style.height = "200px";
+    first.style.border = "1px soild red";
+
+    const second = document.getElementById('second');
+    second.style.width = "200px"
+    second.style.height = "200px"
+    second.style.border = "1px soild green"
+
+    //사용자가 정의한 함수
+    function makeElement(tagName, textNode){
+      let element = document.createElement(tagName);
+      element.innerText = textNode;
+      element.style.width = "100px"
+      element.style.height = "100px"
+      element.style.backgroundColor = "salmon"
+      return element;
+    }
+    first.appendChild(makeElement("section","hello!"));
+    //첫번째 정적요소first 에 자식요소로 '호출' 하면서 추가
+  </script>
+</body>
+</html>
