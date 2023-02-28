@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menu{
+      width: 100px;
+      height: 100px;
+      background-color: violet;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root'); 
+    
+    //메서드로 만든것(아래 리터럴걷어낸거랑 결과값은같다)(객체형으로)
+    const ElementMaker = {
+      tagName : "",
+      setAttriName : "",
+      setAttriValue : "",
+      parent : "",
+      
+      maker : function(){
+        const element = document.createElement(tagName);
+        element.setAttribute(setAttriName,setAttriValue); 
+        parent.appendChild(element);
+      },
+
+      loopFunc : function(){
+        for(let i = 0; i <100; i++){
+          this.maker();
+        }
+      }
+    }
+
+
+    //전 파일해서 함수였던 것들이 리터럴 다 걷어낸것 (함수형으로)
+    function ulMaker(tagName, setAttriName, setAttriValue, parent){
+      const element = document.createElement(tagName);
+      element.setAttribute(setAttriName,setAttriValue); 
+      parent.appendChild(element);
+    }
+
+    for(let i = 0; i <100; i++){
+      ulMaker('header','id',`test-${i}`,root);
+    }
+
+    const pick = root;
+    console.dir(pick);
+
+    // root.children[65].style.width = "100px";
+    // root.children[65].style.height = "100px";
+    // root.children[65].style.backgroundColor = "red";
+    
+    // ulMaker("ul","id","section",root);
+    // ulMaker("section","id","test",root);
+    // ulMaker("section","id","test-1",root);
+    // ulMaker("section","id","test-2",root);
+    // ulMaker("section","id","test-3",root);
+    // ulMaker("section","id","test-4",root);
+    // ulMaker("section","id","test-5",root);
+
+  </script>
+</body>
+</html>
